@@ -43,10 +43,24 @@ The issue body should have:
 -   Answers to each of the questions above, in the following format:
 
     ```text
-    1. Answer one.
-    2. A) Answer two, part one, B) Answer two, part two
+    1. i. Homework submission needs to be at 80% or higher
+       ii. Attendance must be consistent (please see the Attendance Policy)
+       iii. All unit projects need be submitted and presented to the instructional team and should meet project rubric expectations
+    2. https://www.youtube.com/playlist?list=PLdnONIhPScSToZztXRHyKZTQEsE30luMx
+    3. "Javascript the Good Parts"
+    4. why the change is needed, how it addresses the issue and what side-effects it might have.
+    5. copy of error message, copy of code in question, and explanation of how you fixed it
+    6. Atlassian Git Tutorials, Try GitHub, and Explain Git with D3
+    7. Add white space and don't use true black
+    8. Max no of absences is 2; 2 late arrivals = 1 absence
+    9. https://www.mashape.com/
+    10. N/A
     ...
     ```
 
 -   A 'comfort' score on how you feel about your answers, from 1 (very
     uncomfortable) to 5 (very comfortable)
+
+    ```4.
+    ...
+    ```

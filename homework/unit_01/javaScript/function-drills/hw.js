@@ -132,6 +132,11 @@ var wordsWithAtLeastTwoVowels = function(words){
 // Edge Case: If the array is empty, the function should return `true`.
 var allHaveAtLeastTwoVowels = function(words){
   // Your Code Here
+  for (var i = 0; i < words.length; i++) {
+    if (!(hasAtLeastNVowels(words[i], 2))) {
+      return false;
+    }
+  } return true;
 };
 
 // #10
@@ -140,6 +145,11 @@ var allHaveAtLeastTwoVowels = function(words){
 //          `false` otherwise.
 var anyHaveAtLeastTwoVowels = function(words){
   // Your Code Here
+  for (var i = 0; i < words.length; i++) {
+    if (hasAtLeastNVowels(words[i], 2)) {
+      return true;
+    }
+  } return false;
 };
 
 // #11
@@ -149,6 +159,10 @@ var anyHaveAtLeastTwoVowels = function(words){
 // Edge Case: If the array is empty, the function should return `true`.
 var noneHaveTwoOrMoreVowels = function(words){
   // Your Code Here
+  for (var i = 0; i < words.length; i++) {
+    if (hasAtLeastNVowels(words[i], 2))
+      return false;
+  } return true;
 };
 
 // #12

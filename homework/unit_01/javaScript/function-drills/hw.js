@@ -69,8 +69,8 @@ var wordsWithAtLeastFiveLetters = function(words){
 // Edge Case: If the array is empty, the function should return `true`.
 var allStartingWithA = function(words){
   // Your Code Here
-  for (war i = 0; i < words.length; i++) {
-    if (!(words[i].startsWith("a") || words[i].startsWith("A"))) {
+  for (var i = 0; i < words.length; i++) {
+    if (!(words[i].slice(0, 1) === "a" || words[i].slice(0, 1) === "A")) {
       return false;
     }
   }
@@ -83,6 +83,12 @@ var allStartingWithA = function(words){
 //          (case-insensitive), `false` otherwise
 var anyStartingWithB = function(words){
   // Your Code Here
+  for (var i = 0; i < words.length; i++) {
+    if (words[i].slice(0, 1) === "b" || words[i].slice(0, 1) === "B") {
+      return true;
+    }
+  }
+  return false;
 };
 
 // #7
@@ -93,6 +99,16 @@ var anyStartingWithB = function(words){
 // Edge Case: If `n` is less than zero, return `null`.
 var hasAtLeastNVowels = function(word, n){
   // Your Code Here
+  if (n < 0) {
+    return null;
+  }
+  var count = 0;
+  for (var i =0; i < word.length; i++) {
+    if (word.charAt(i) === "a" || word.charAt(i) === "A" || word.charAt(i) === "e" || word.charAt(i) === "E" || word.charAt(i) === "i" || word.charAt(i) === "I" || word.charAt(i) === "o" || word.charAt(i) === "O" || word.charAt(i) === "u" || word.charAt(i) === "U") {
+    count++;
+    }
+  }
+return count >= n;
 };
 
 // #8
@@ -100,6 +116,13 @@ var hasAtLeastNVowels = function(word, n){
 // Output: an array of words from the original array that have at least two
 //          vowels
 var wordsWithAtLeastTwoVowels = function(words){
+  var vowels = [];
+  for (var i = 0; i < words.length; i++) {
+    if (hasAtLeastNVowels(words[i], 2)) {
+      vowels.push(words[i]);
+    }
+  }
+  return vowels;
   // Your Code Here
 };
 

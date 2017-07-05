@@ -60,13 +60,46 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-> Answer here
+<!-- For a list of tasks, it helps to identity when something started, ended, a short description and if it was part of a larger project. I have also added a model for 'projects' in case the more specific task is a step toward completing something larger -->
+
+var task = {
+  description: "Write rough draft",
+  dateStarted: "04.05.17",
+  dateCompleted: "05.01.17", 
+}
+
+var project = {
+  description: "Write manuscript",
+  dateStarted: "02.12.17",
+  dateCompleted: null,
+  submissionStatus: "unsubmitted",
+}
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> Answer here
+<!-- I have created data sets for the three mentioned categories: photos, albums, and users. There are categories of data unique to each that might be helpful in the future referencing -->
+
+var photo = {
+  dateTaken: "02.16.17",
+  timeTaken: "12:07pm",
+  personsTagged: ["Bill Smith", "Mary Walsh", "Steve Thomas"],
+  location: "Ponce City Market",
+  caption: "Ice cream time",
+}
+
+var album = {
+  albumTitle: "Summer in Atlanta",
+  dateAlbumCreated: "08.12.17",
+  numberOfPhotos: 22,
+}
+
+var account = {
+  userName: "dweb",
+  dateAccountCreated: "04.11.15",
+  premiumAccountStatus: false,
+}
 
 ### 3. Home Automation Manager
 
@@ -75,7 +108,20 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
-> Answer here
+<!-- Different rooms will be controlled differently and have different devices to manage. -->
+
+var livingRoom = {
+  fireplaceOn: true,
+  overheadLightDimmer: 90,
+  blindsDrawn: true,
+  tvOn: true,
+}
+
+var bedroom = {
+  doorLock: true,
+  temperature: "70 degrees",
+  nightstandLightOn: true,
+}
 
 ### 4. Sneaker Store
 
@@ -83,7 +129,26 @@ This app will allow customers to browse a list of products (sneakers, in this
 case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
-> Answer here
+<!-- Three categories are mentioned. Customers should have a way to view order history, current status of shopping cart, and specific details of products they are browsing -->
+
+var sneaker = {
+  designer: "Nike",
+  cost: 100,
+  style: "cross-trainer",
+  color: "red",
+}
+
+var shoppingCart = {
+  numberOfItems: 4,
+  totalCost: 250,
+  shipping: "standard",
+  saleAmountApplied: false;
+}
+
+var orderHistory = {
+  numberOfPreviousOrders: 6,
+  deliveryStatus: "In transit",
+}
 
 ## Representing Abstractions in Code
 
@@ -139,7 +204,12 @@ var exampleLine = {
 
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
-> Answer here
+Disadvantages:
+- number of stops arent calc'd in Rail Line object; that is the stated purpose of the app.
+- descriptions should link to more info rather than trail off
+
+Advantages:
+- nested objects permit for more specific info re each station on line
 
 ### 6. Doctor Appointment App
 
@@ -242,7 +312,13 @@ Under what circumstances might one representation be a better choice than the
 other? Are there any circumstances in which the other representation might be
 the better choice?
 
-> Answer here
+Option 1:
+Advantages - doc can have listed each appt specifically without having to controll for each separate doc.
+Disadvantages - hard to list out all apts in office by time since they are only listed within doc object
+
+Option 2:
+Advantages - easier to search patients and docs since they are listed separately
+Disadvantages - Appts are harder to search through.
 
 ## Tying It Together
 
@@ -253,13 +329,34 @@ You've been tasked with building an in-browser tic-tac-toe game.
 a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
-  > Answer here
+-Individual user info
+  - all time record
+  - current score
+  - username info
+
+-head to head data in within a specific game
+  - head to head record
+  - time in specific matchup
+  - both users' names
 
 b.  How might those entities be represented in JavaScript code?
 
   > Answer here
+  var user = {
+    userName: "dweb",
+    score: 1000,
+    allTimeRecord: "44-55",
+  }
+
+  var game = {
+    userName1: "dweb",
+    userName2: "billo",
+    head2head: "2-3",
+    time: "5:40",
+  }
 
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
   > Answer here
+  Users will want to keep data on their personal performances and also their performance in a specific on-going matchup. Being able to track how long you've been playing is helpful to get better or to know when to stop.

@@ -42,8 +42,8 @@ while (resSix.toString(resSix.length) < 5) {
 //    below 95, decreases it by 7 when it's strictly above 105, and stops as
 //    soon as `resSeven` equals or falls between those two values.
 var resSeven = 66;
-while (resSeven < 75 || resSeven > 105) {
-  if (resSeven < 75) {
+while (resSeven < 95 || resSeven > 105) {
+  if (resSeven < 95) {
     resSeven += 12;
   } else (resSeven > 105) {
     resSeven -= 7;
@@ -72,7 +72,10 @@ for (var i = 0; i < 1000; i++) {
 // Replace This Comment With Your Code
 
 // 10. For numbers 1-10, calculate n^n and then store the sum of all of these values in the variable `resTen`.
-var resTen;
+var resTen = 0;
+for (var i = 0; i < 11; i++) {
+  resTen += Math.pow(i, i);
+}
 // Replace This Comment With Your Code
 
 /// DO NOT EDIT BELOW THIS LINE ///

@@ -60,7 +60,7 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-<!-- For a list of tasks, it helps to identity when something started, ended, a short description and if it was part of a larger project. I have also added a model for 'projects' in case the more specific task is a step toward completing something larger -->
+--For a list of tasks, it helps to identity when something started, ended, a short description and if it was part of a larger project. I have also added a model for 'projects' in case the more specific task is a step toward completing something larger
 
 var task = {
   description: "Write rough draft",
@@ -79,7 +79,7 @@ var project = {
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-<!-- I have created data sets for the three mentioned categories: photos, albums, and users. There are categories of data unique to each that might be helpful in the future referencing -->
+--I have created data sets for the three mentioned categories: photos, albums, and users. There are categories of data unique to each that might be helpful in the future referencing
 
 var photo = {
   dateTaken: "02.16.17",
@@ -108,7 +108,7 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
-<!-- Different rooms will be controlled differently and have different devices to manage. -->
+--Different rooms will be controlled differently and have different devices to manage.
 
 var livingRoom = {
   fireplaceOn: true,
@@ -129,7 +129,7 @@ This app will allow customers to browse a list of products (sneakers, in this
 case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
-<!-- Three categories are mentioned. Customers should have a way to view order history, current status of shopping cart, and specific details of products they are browsing -->
+--Three categories are mentioned. Customers should have a way to view order history, current status of shopping cart, and specific details of products they are browsing
 
 var sneaker = {
   designer: "Nike",

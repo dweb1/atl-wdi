@@ -3,11 +3,12 @@
 // See LICENSE for details.
 
 var timerUI = {
-  drawNumericDisplay: function(timerValue){
-    // Your Code Here
+  drawNumericDisplay: function(timerValue) {
+  document.getElementById('numeric-display').textContent = timerValue;
   },
   drawProgressBars: function(timerValue){
-    // Your Code Here
+    var timeElapsed = 100 - timerValue;
+    document.getElementsByClassName('progress-bar')[0].style.width = timeElapsed + '%';
   },
   drawLitFuses: function(timerValue){
     // Your Code Here

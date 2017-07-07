@@ -22,7 +22,9 @@ window.onload = function() {
   var ring3 = document.querySelector('.ring-3');
 
   body.addEventListener('click', bullseyeGame.miss);
-  ring1.addEventListener('click', bullseyeGame.outerRing)
+  ring1.addEventListener('click', bullseyeGame.outerRing);
+  ring2.addEventListener("click", bullseyeGame.middleRing);
+  ring3.addEventListener('click', bullseyeGame.innerRing);
 }
 
 
@@ -32,20 +34,42 @@ var bullseyeGame = {
   updateScore: function(points) {
     var scoreElement = document.querySelector('.score');
     this.score += points
-
     scoreElement.innerHTML = `${this.score} points`
   },
 
   miss: function(event) {
     event.stopPropagation();
     alert('YOU MISSED');
-
     bullseyeGame.updateScore(0);
     // [ALERT:] needs to be bullseyeGame because this in clickEvents refers to the html element that was clicked
   },
 
   outerRing: function(event) {
     event.stopPropagation();
+    bullseyeGame.toggleColor('red', event);
+    bullseyeGame.updateScore(10);
     alert('outerRing was clicked')
+  },
+
+  middleRing: function(event) {
+    event.stopPropagation();
+    bullseyeGame.toggleColor('white', event);
+    bullseyeGame.updateScore(50);
+    alert("middleRing was clicked");
+  },
+
+  innerRing: function(event) {
+    event.stopPropagation();
+    bullseyeGame.toggleColor('red', event);
+    bullseyeGame.updateScore(100);
+    alert("BULLSEYE!");
+  },
+
+  toggleColor: function(color, event) {
+    event.target.style.backgroundColor = "yellow";
+    setTimeout(function () {
+      event.target.style.backgroundColor = color;
+    }, 2000);
   }
+  
 }

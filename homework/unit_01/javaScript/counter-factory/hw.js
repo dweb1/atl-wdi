@@ -33,16 +33,16 @@ const CounterCollection = {
       return counter.count;
     }
   },
-  destroyCounter: function(countId){
-    console.log(`destroy counter #${countId}`);
-    let counter = this.counters.find(function(counter){
-      return counter.countId === countId;
-    });
-    if (counter) { counter.destroy(); }
-    this.counters = this.counters.filter(function(counter){ //
-      return counter.countId !== countId
-    });
-  }
+  // destroyCounter: function(countId){
+  //   console.log(`destroy counter #${countId}`);
+  //   let counter = this.counters.find(function(counter){
+  //     return counter.countId === countId;
+  //   });
+  //   if (counter) { counter.destroy(); }
+  //   this.counters = this.counters.filter(function(counter){ //
+  //     return counter.countId !== countId
+  //   });
+  // }
 };
 
 // UI //
@@ -50,28 +50,41 @@ const Presenter = {
   insertCounterComponent: function(newCountId){
     console.log(`insert counter component #${newCountId}`);
     // Your Code Here
+    var newCounter = document.createElement('div');
+    newCounter.innerHTML = `<h3>Count: <span>0</span></h3> <button class='increment'> +1 </button>`;
+    newCounter.className += ' counter';
+    newCounter.dataset.countId = newCountId;
+    newCounter.getElementsByClassName('increment')[0].onClick= AppController.onClickIncrement;
+    document.getElementById('counter-list').appendChild(newCounter);
   },
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
     // Your Code Here
+    var val = CounterCollection.getCounterValue(countId);
+    document.querySelector(`[data-count-id="${countId}"] span`).innerHTML = val;
   },
-  removeCounterComponent: function(countId){             // REACH
-    console.log(`remove counter component #${countId}`);
-    // Your Code Here
-  }
+  // removeCounterComponent: function(countId){             // REACH
+  //   console.log(`remove counter component #${countId}`);
+  //   // Your Code Here
+  // }
 };
 
 // Top-Level Application Control //
 const AppController = {
   onClickNewCounter: function(event){
     // Your Code Here
+    CounterCollection.createCounter();
+    Presenter.insertCounterComponent(CounterCollection.lastCountId);
   },
   onClickIncrement: function(event){
     // Your Code Here
+    var countId = Number(event.target.parentNode.dataset.countId);
+    CounterCollection.incrementCounter(countId);
+    Presenter.refreshCounterComponent(countId);
   },
-  onClickDelete: function(event){                           // REACH
-    // Your Code Here
-  }
+  // onClickDelete: function(event){                           // REACH
+  //   // Your Code Here
+  // }
 };
 
 window.onload = function(){

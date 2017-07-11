@@ -28,12 +28,11 @@ const Stopwatch = {
       this.secs = 0;
       this.mins += 1;
     };
-    console.log(this.secs);
   },
   reset: function(){
     this.millisecs = 0;
     this.secs = 0;
-    $('#mins').html($('mins').val()) = 0;
+    this.mins = 0;
     laps = [];
     ;
   },
@@ -73,12 +72,13 @@ const ViewEngine = {
 const ViewHelpers = {
   zeroFill: function(number, length){
     // Your Code Here
-    if ($('#millisecs').val().length < 3) {
-      return "0" + $('#millisecs').val();
-    } if ($('#secs').val().length < 2) {
-      return "0" + $('#secs').val();
-    } if ($('#mins').val().length < 2) {
-      return "0" + $('#mins').val();
+    console.log(millisecs.toString.length);
+    if (millisecs.toString.length < 3) {
+      return "0" + millisecs;
+    } if (secs.toString.length < 2) {
+      return "0" + secs;
+    } if (mins.toString.length < 2) {
+      return "0" + mins;
     }
   },
 };
@@ -99,9 +99,10 @@ const AppController = {
     // Your Code Here
     if (Stopwatch.isRunning === true) {
       Stopwatch.stop();
-    } else if (Stopwatch.isRunning = false) {
+    } else if (Stopwatch.isRunning === false) {
       Stopwatch.reset();
       ViewEngine.updateTimeDisplay(0, 0, 0);
+      ViewHelpers.zeroFill();
       laps = [];
     };
   },

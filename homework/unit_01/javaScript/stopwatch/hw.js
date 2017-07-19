@@ -70,16 +70,11 @@ const ViewEngine = {
 };
 
 const ViewHelpers = {
-  zeroFill: function(number, length){
+  zeroFill: function(num, length){
     // Your Code Here
-    console.log(millisecs.toString.length);
-    if (millisecs.toString.length < 3) {
-      return "0" + millisecs;
-    } if (secs.toString.length < 2) {
-      return "0" + secs;
-    } if (mins.toString.length < 2) {
-      return "0" + mins;
-    }
+   if (millisecs < 100) {
+    $('#millisecs').HTML("00" + millisecs.toString());
+   }
   },
 };
 

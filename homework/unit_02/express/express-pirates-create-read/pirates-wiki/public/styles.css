@@ -1,0 +1,19 @@
+#pirateDiv {
+	display; flex;
+	flex-direction: row;
+	justify-content-content: space-between
+	width:100%;
+}
+
+body {
+	background: black;
+	color:white;
+}
+
+li a {
+	color:white;
+}
+
+#pirate {
+
+}

@@ -6,6 +6,7 @@ var app = express();
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 var hbs = require('hbs');
+const methodOverride = require('method-override');
 
 
 //===========================
@@ -19,6 +20,8 @@ app.use(bodyParser.json());
 //set handlebars as view engine
 app.set("view engine", "hbs");
 app.set('views', './views');
+app.use(methodOverride('_method'));
+
 
 //===========================
 // CONTROLLERS

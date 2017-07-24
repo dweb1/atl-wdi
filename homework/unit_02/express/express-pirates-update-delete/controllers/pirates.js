@@ -67,11 +67,14 @@ router.put('/:id', (req, res) => {
 	res.redirect(`/pirates/${id}`);
 });
 
-
 //==============================
 // DESTROY
 //==============================
-
+router.delete('/:id', (req, res) => {
+	pirates.splice(req.params.id, 1);
+	res.method = "GET";
+	res.redirect('/pirates');
+})
 //==============================
 // EXPORTS
 //==============================

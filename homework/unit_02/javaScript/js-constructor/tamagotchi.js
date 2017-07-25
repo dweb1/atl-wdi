@@ -22,19 +22,32 @@ class Tamagotchi {
 		this.restedness--;
 		console.log(this.name + " has current restedness of: " + this.restedness);
 	}
+	start() {
+		var self = this;
+		this.hungerTime = setInterval(function(){
+			self.cry();
+		}, 6000);
+		this.yawnTimer = setInterval(function(){
+			self.yawn();
+		}, 10000);
+		this.sickTimer = setInterval(function() {
+			self.puke();
+		}, 20000);
+	}
+	stop() {
+		clearInterval(this)
+	}
 } 
 
 //create new Tamagotchis
 const bill = new Tamagotchi("Bill", "lizard");
-bill.puke();
-bill.yawn();
+bill.start();
+bill.stop();
 
 const steve = new Tamagotchi("Steve", "zebra");
-steve.puke();
-steve.yawn();
+steve.start();
 
 const earl = new Tamagotchi("Earl", "possum");
-earl.puke();
-earl.yawn();
+earl.start();
 
 //test out your Tamagotchies below via console.logs

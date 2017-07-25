@@ -13,43 +13,47 @@ Item.remove({}, function(err){
 });
 
 User.remove({}, function(err){
-  console.log(err);
+  console.log('successfully removed');
+  seedData();
 });
 
-// create new users
-var danny = new User({
-  first_name: 'Danny',
-  email: 'danny@gmail.com',
-  items: [{ name: "Take my bike to the shop for maintenance" }]
-});
+function seedData(){
+  // create new users
+  var danny = new User({
+    first_name: 'Danny',
+    email: 'danny@gmail.com',
+    items: [{ name: "Take my bike to the shop for maintenance" }]
+  });
 
-var maren = new User({
-  first_name: 'Maren',
-  email: 'maren@gmail.com',
-  items: [{ name: "Get dry cleaning" }]
-});
+  var maren = new User({
+    first_name: 'Maren',
+    email: 'maren@gmail.com',
+    items: [{ name: "Get dry cleaning" }]
+  });
 
-var diesel = new User({
-  first_name: 'Diesel',
-  email: 'diesel@gmail.com',
-  items: [{ name: "Go to the dog park" }]
-});
+  var diesel = new User({
+    first_name: 'Diesel',
+    email: 'diesel@gmail.com',
+    items: [{ name: "Go to the dog park" }]
+  });
 
-// save the users
-danny.save(function(err) {
-  if (err) console.log(err);
+  // save the users
+  danny.save(function(err) {
+    if (err) console.log(err);
 
-  console.log('danny created!');
-});
+    console.log('danny created!');
+  });
 
-maren.save(function(err) {
-  if (err) console.log(err);
+  maren.save(function(err) {
+    if (err) console.log(err);
 
-  console.log('maren created!');
-});
+    console.log('maren created!');
+  });
 
-diesel.save(function(err) {
-  if (err) console.log(err);
-  
-  console.log('diesel created!');
-});
+  diesel.save(function(err) {
+    if (err) console.log(err);
+    
+    console.log('diesel created!');
+  });
+
+}

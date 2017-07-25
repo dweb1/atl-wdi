@@ -14,16 +14,27 @@ class Tamagotchi {
 		console.log(this.foodInTummy);
 		console.log("WAHH!" + "- " + this.name);
 	}
+	puke() {
+		this.foodInTummy--;
+		console.log("Waaaaaah - " + this.name + " is sick and has " + this.foodInTummy + " food in his tummy");
+	}
+	yawn() {
+		this.restedness--;
+		console.log(this.name + " has current restedness of: " + this.restedness);
+	}
 } 
 
 //create new Tamagotchis
 const bill = new Tamagotchi("Bill", "lizard");
-bill.cry();
+bill.puke();
+bill.yawn();
 
 const steve = new Tamagotchi("Steve", "zebra");
-steve.cry();
+steve.puke();
+steve.yawn();
 
 const earl = new Tamagotchi("Earl", "possum");
-earl.cry();
+earl.puke();
+earl.yawn();
 
 //test out your Tamagotchies below via console.logs

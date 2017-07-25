@@ -41,13 +41,13 @@ class Tamagotchi {
 
 //create new Tamagotchis
 const bill = new Tamagotchi("Bill", "lizard");
-bill.start();
-bill.stop();
+// bill.start();
+// bill.stop();
 
 const steve = new Tamagotchi("Steve", "zebra");
-steve.start();
+// steve.start();
 
 const earl = new Tamagotchi("Earl", "possum");
-earl.start();
+// earl.start();
 
 //test out your Tamagotchies below via console.logs

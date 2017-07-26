@@ -53,46 +53,52 @@ router.get('/:id', (req, res) => {
 
 
 // USER UPDATE ROUTE
-router.get('/:id/edit', (req, res) => {
-	const userIdToEdit = req.params.id;
-	User.findById(userIdToEdit)
-	.then((user) => {
-		res.render('users.edit', {
-			user: user
-		})
-	})
-})
-
 router.put('/:id', (req, res) => {
 
    const userIdToUpdate = req.params.id;
-    const updatedUserInfo = req.body;
+   const updatedUserInfo = req.body;
     
    User.findByIdAndUpdate(
         userIdToUpdate,
         updatedUserInfo,
-        {new: true}
-    ) .then((user) => {
-        console.log('User with ID of ' + user._id + ' updated');
+        { new: true }
+    ) 
+   		.then((user) => {
+        	console.log('User with ID of ' + user._id + ' updated');
 
-       res.render('users/show', {
-            user
-        })
+       		res.render('users/show', 
+       		{ user }
+       		)
+       	})
         .catch((error) => {
             console.log('Error! User failed to update: ' + error);
             console.log(error);
         })
+});
 
-   })
+router.get('/:id/delete', (req, res) =>{
+	const userIdToDelete = req.params.id;
+	User.findByIdAndRemove(userIdToDelete)
+	.then(() => {
+		console.log(`Successfully deleted user with ID ${userIdToDelete}!`)
+		res.redirect('/users');
+	})
 })
 
-// USER DESTROY
-
-
-// ADD A NEW ITEM
-
-
-// REMOVE AN ITEM
+router.get('/:id/edit', (req, res) => {
+	const userIdToFind = req.params.id;
+	User.findById(userIdToFind)
+	.then((user) => {
+		console.log(`Successfully edited form for user with ID of ${userIdToFind}`)
+		res.render(
+			'users/edit', 
+			{ user }
+		);
+	})
+	.catch((err) => {
+		console.log(`Error rendering edit form for user with ID of ${userIdToFind}`)
+	})
+});
 
 
 module.exports = router;

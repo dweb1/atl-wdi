@@ -2,11 +2,13 @@
 
 {{#each users}}
 	<ul>
-		<li>Name: {{this.first_name}}</li>
+		<li>Name: <a href="/users/{{this._id}}">{{this.first_name}}</a></li>
 		<li>Email: {{this.email}}</li>
-		<li>Email: {{this._id}}</li>
-		<a href="/users/{{this._id}}/delete">Delete {{this.first_name}}</a>
+		<li>ID: {{this._id}}</li>
+		<a href="/users/{{this._id}}/delete">Delete {{this.first_name}}</a> <br>
 		<a href="/users/{{this._id}}/edit">Edit {{this.first_name}}</a>
 		<br>
 	</ul>
 {{/each}}
+
+<a href="/users/new">Create New</a>

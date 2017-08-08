@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import Header from './components/Header';
 import Search from './components/Search';
 import Movie from './components/Movie';
@@ -14,23 +16,35 @@ class App extends Component {
 
   //Update these methods to make axios calls to OMDB and update this.state.movie with the response from the server
   _searchByTitle = () => {
-    console.log("Search by Title");
-  }
+    const movieTitle = document.getElementById("title-search-box").value;
+    axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&apikey=d31f1a94")
+        .then((res) =>{
+          this.setState({
+            movie: res.data
+          })
+          });
+    }
 
   _searchById = () => {
-    console.log("Search by ID");
-  }
+    const movieId = document.getElementById("id-search-box").value;
+    axios.get("http://www.omdbapi.com/?i=" + movieId + "&apikey=d31f1a94")
+        .then((res) =>{
+          this.setState({
+            movie: res.data
+          })
+          });
+    }
 
   //Pass _searchByTitle, _searchById, and this.state.movie to it's appropriate child components.
   render() {
     return (
       <div className="App">
         <Header />
-        <Search />
-        <Movie />
+        <Search getMovieId={this._searchById} getMovieTitle={this._searchByTitle}/>
+        <Movie movie={this.state.movie} />
       </div>
     );
   }
-}
+  }
 
 export default App;

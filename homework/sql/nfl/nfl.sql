@@ -6,10 +6,9 @@
 6. SELECT * FROM players ORDER BY salary DESC LIMIT 50;
 7. SELECT AVG(salary) FROM players;
 8. SELECT name, position FROM players WHERE salary > 10000000;
-9. 
-10.
-11.
-12.
-13.
-14.
-
+9. SELECT * FROM players ORDER BY salary DESC LIMIT 1;
+10. SELECT name, position FROM players ORDER BY salary ASC LIMIT 100;
+11. SELECT AVG(salary) FROM players WHERE position = 'DE';
+12. SELECT name FROM players WHERE team_id = (SELECT id FROM teams WHERE name = 'Buffalo Bills');
+13. SELECT SUM(salary) FROM players WHERE team_id = (SELECT id FROM teams WHERE name = 'New York Giants');
+14. SELECT name FROM players WHERE team_id = (SELECT id FROM teams WHERE name = 'Green Bay Packers') ORDER BY salary ASC LIMIT 1;

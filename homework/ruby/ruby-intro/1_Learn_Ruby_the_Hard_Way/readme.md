@@ -99,14 +99,22 @@ Please answer the following questions in the spaces provided.
 1.  How do you write an `if` statement in Ruby?
 
   ```ruby
-    # your answer here
+    if (condition)
+      (outcome)
+    elsif (condition)
+      (outcome)
+    else
+      (outcome)
+    end
   ```
 
 2.  Please write code that would take the string "007", reverse it,
     and return the integer `700`.
 
   ```ruby
-    # your answer here
+  x = '007'
+  x.reverse!
+  x = x.to_i
   ```
 
 3.  Please write code that takes the array `[23,56,3,7]`, sorts it,
@@ -114,37 +122,49 @@ Please answer the following questions in the spaces provided.
     (i.e. modifying the original array, rather than returning a new array).
 
   ```ruby
-    # your answer here
+    array = [23,56,3,7]
+    array.sort!.reverse!
   ```
 
 3.  What does an exclamation point at the end of a method name usually signify?
 
   ```text
-    Your answer here:
+    Your answer here: that the method called will 'destroy' the object and replace it with the newly operated result of the method called
   ```
 
 4.  What does a question mark and the end of a method name usually signify?
 
   ```text
-    Your answer here:
+    Your answer here: that a object is being tested and it will return a boolean based on the method called
   ```
 
 5.  How do you define a method in Ruby? Give a simple example.
 
   ```ruby
-    # your answer here
+    A method is a set of expressions that returns a value. An example:
+    def hello
+      puts "Hello World!"
+    end
   ```
 
 6.  How do you create a class in Ruby? Give a simple example.
 
   ```ruby
-    # your answer here
+    class Customer
+      name = name
+      id = id 
+    end
   ```
 
 7. Please give an example of how iteration can be performed in Ruby.
 
   ```ruby
-    # your answer here
+    i=0
+    loop do
+      i+=1
+      print "#{i} "
+      break if i==5
+    end
   ```
 
 8.  If I modify a class in Ruby by adding a method, will instances of that class
@@ -152,5 +172,5 @@ Please answer the following questions in the spaces provided.
     Please explain why.
 
   ```text
-    Your answer here:
+    Your answer here: Yes, the newly created method will be called when the object searches up the method lookup path and finds the change. If the object doesn't initally see that method on within its own attributes, it will check the class from which it was created.
   ```

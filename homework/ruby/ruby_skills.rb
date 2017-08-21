@@ -10,9 +10,19 @@
 # puts a.classg
 
 #Challenge 3
-d = 4
-puts d
-e = 4.5
-puts e
-d = e
-puts d
+# d = 4
+# puts d
+# e = 4.5
+# puts e
+# d = e
+# puts d
+
+# Challenge 4
+christine = "Hi, I'm Christine"
+likesTo = "long walks on the beach, kinda."
+tims = christine + " and I like " + likesTo
+puts tims
+g = "2"
+gToNumber = 2
+puts g + gToNumber
+puts g.to_i + gToNumber

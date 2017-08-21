@@ -39,11 +39,33 @@
 # puts first_name + " likes to " + activity
 
 #Challenge 6
-myFirstArray = []
-myFirstArray = ["a", "b", "c", "d", "e", 1, 2, 3, 4]
-puts myFirstArray[myFirstArray.length - 1]
-puts myFirstArray[0]
-myFirstArray[1] = "Joe"
-myFirstArray[2] = 3
-myFirstArray.push(true)
-puts myFirstArray[3].class
+# myFirstArray = []
+# myFirstArray = ["a", "b", "c", "d", "e", 1, 2, 3, 4]
+# puts myFirstArray[myFirstArray.length - 1]
+# puts myFirstArray[0]
+# myFirstArray[1] = "Joe"
+# myFirstArray[2] = 3
+# myFirstArray.push(true)
+# puts myFirstArray[3].class
+
+# Challenge 7
+myFavoriteAnimals = {
+    "Edgar" => "Donkey",
+    "Bill" => "Dog",
+    "Chris" => "cat",
+    "Susan" => "lizard",
+    "Becky" => "gerbil"
+}
+
+myFavoriteAnimals["Edgar"] = "Bear"
+
+favoriteMovie = {}
+favoriteMovie["movie"] = "Caddyshack"
+
+
+
+
+
+
+
+

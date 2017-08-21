@@ -27,13 +27,23 @@
 # puts g + gToNumber
 # puts g.to_i + gToNumber
 
-# Challenge 5
+# # Challenge 5
 # puts "Gimme an integer"
 # input = gets.chomp.to_i
 # puts input * 2
 
-puts "Gimme your first name"
-first_name = gets.chomp
-puts "What do you like to do?"
-activity = gets.chomp
-puts first_name + " likes to " + activity
+# puts "Gimme your first name"
+# first_name = gets.chomp
+# puts "What do you like to do?"
+# activity = gets.chomp
+# puts first_name + " likes to " + activity
+
+#Challenge 6
+myFirstArray = []
+myFirstArray = ["a", "b", "c", "d", "e", 1, 2, 3, 4]
+puts myFirstArray[myFirstArray.length - 1]
+puts myFirstArray[0]
+myFirstArray[1] = "Joe"
+myFirstArray[2] = 3
+myFirstArray.push(true)
+puts myFirstArray[3].class

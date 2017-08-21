@@ -29,47 +29,59 @@ Your Answer Here
 2. What does SOLID stand for?
 
 ```
-Your Answer Here
+S -ingle Responsibility
+O -pen-Closed
+L -iskov Substition 
+I -nterface Substitution
+D -ependency Inversion
 ```
 
 3. Ruby is a class-based object-oriented language. What does that mean?
 
 ```
-Your Answer Here
+Ruby is styled such that inheritance is achieved by defining classes of objects, as opposed to the objects themselves.
 ```
 
 4. Where are methods defined in Ruby?
 
 ```
-Your Answer Here
+Between parentheses following the method name
 ```
 
 5. Why does single Responsibility matter?
 
 ```
-Your Answer Here
+Guards against fragmentation and keeps cohesion throughout code.
 ```
 
 6. What does `attr_reader` do?
 
 ```
-Your Answer Here
+Automatically creates a method
 ```
 
 7. What are 4 benefits Metz outlines for methods that have a single responsibility?
 
 ```
-Your Answer Here
+1. Expose previously hidden qualities.
+2. Avoide the need for comments.
+3. Encourage reuse.
+4. Are easy to move to another class.
 ```
 
 8. What are 4 things an object knows when it has a dependency?
 
 ```
-Your Answer Here
+1. name of another class
+2. name of a message that it intends to send to someone other than self
+3. argument that a message requires
+4. order of the arguments
+
 ```
 
 9. Dependency management is core to creating future-proof applications. What does injecting dependencies and isolating dependencies do? What are their benefits?
 
 ```
-Your Answer Here
+Inject Dependencies - creates new method and decouples two related classes; helps maintain consistency
+Isolate dependencies - removes unnecessary dependencies; cleans up code
 ```

@@ -63,35 +63,44 @@
 # favoriteMovie["movie"] = "Caddyshack"
 
 #Challenge 8
-firstRange = (1..10)
-firstRange = firstRange.to_a
+# firstRange = (1..10)
+# firstRange = firstRange.to_a
 
-secondRange = (1...1000)
-secondRange = secondRange.to_a
+# secondRange = (1...1000)
+# secondRange = secondRange.to_a
 
-for number in firstRange do
-    puts number.class
-    puts number.to_s.class
-end
+# for number in firstRange do
+#     puts number.class
+#     puts number.to_s.class
+# end
 
-x = 0
-while x < 50 do
-    puts secondRange[x]
-    x += 1
-end
+# x = 0
+# while x < 50 do
+#     puts secondRange[x]
+#     x += 1
+# end
 
-newArray = []
-firstRange.each_with_index do |number, index|
-    if index.even?
-        newArray.push(number * 2)
+# newArray = []
+# firstRange.each_with_index do |number, index|
+#     if index.even?
+#         newArray.push(number * 2)
+#     end
+# end
+# puts newArray
+
+# firstRange.map do |number|
+#     if number % 2 ==0
+#         number = number.to_s
+#     end
+# end
+
+
+# Challenge 9
+nat_nums = (1...1000)
+total = 0
+nat_nums.each do |num|
+    if num % 3 == 0 || num % 5 == 0
+        total += num
     end
 end
-puts newArray
-
-firstRange.map do |number|
-    if number % 2 ==0
-        number = number.to_s
-    end
-end
-
-
+puts total

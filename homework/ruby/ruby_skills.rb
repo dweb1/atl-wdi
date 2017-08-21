@@ -49,23 +49,49 @@
 # puts myFirstArray[3].class
 
 # Challenge 7
-myFavoriteAnimals = {
-    "Edgar" => "Donkey",
-    "Bill" => "Dog",
-    "Chris" => "cat",
-    "Susan" => "lizard",
-    "Becky" => "gerbil"
-}
+# myFavoriteAnimals = {
+#     "Edgar" => "Donkey",
+#     "Bill" => "Dog",
+#     "Chris" => "cat",
+#     "Susan" => "lizard",
+#     "Becky" => "gerbil"
+# }
 
-myFavoriteAnimals["Edgar"] = "Bear"
+# myFavoriteAnimals["Edgar"] = "Bear"
 
-favoriteMovie = {}
-favoriteMovie["movie"] = "Caddyshack"
+# favoriteMovie = {}
+# favoriteMovie["movie"] = "Caddyshack"
 
+#Challenge 8
+firstRange = (1..10)
+firstRange = firstRange.to_a
 
+secondRange = (1...1000)
+secondRange = secondRange.to_a
 
+for number in firstRange do
+    puts number.class
+    puts number.to_s.class
+end
 
+x = 0
+while x < 50 do
+    puts secondRange[x]
+    x += 1
+end
 
+newArray = []
+firstRange.each_with_index do |number, index|
+    if index.even?
+        newArray.push(number * 2)
+    end
+end
+puts newArray
 
+firstRange.map do |number|
+    if number % 2 ==0
+        number = number.to_s
+    end
+end
 
 
